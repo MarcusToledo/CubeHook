@@ -19,6 +19,9 @@
     <Filter Include="PatternScanner">
       <UniqueIdentifier>{d60dc5c3-3fc1-4173-9c68-ac1a29295992}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cheats">
+      <UniqueIdentifier>{266e1d90-74ef-484b-a407-7eaeab6525bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -36,6 +39,9 @@
     <ClInclude Include="PatternScanner.h">
       <Filter>PatternScanner</Filter>
     </ClInclude>
+    <ClInclude Include="Cheats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -46,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="PatternScanner.cpp">
       <Filter>PatternScanner</Filter>
+    </ClCompile>
+    <ClCompile Include="Cheats.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

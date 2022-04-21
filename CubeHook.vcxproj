@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cheats.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Geo.h" />
     <ClInclude Include="PatternScanner.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Reclass.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cheats.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="PatternScanner.cpp" />
     <ClCompile Include="pch.cpp">

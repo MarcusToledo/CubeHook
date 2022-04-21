@@ -11,5 +11,5 @@ public:
 	//constructor
 
 	MODULEINFO getModuleInfo(const char* szModule);
-	DWORD scanPattern(const char* szModule, const char* szPattern, const char* szMask);
+	DWORD scan(const char* szPattern, const char* szMask);
 };

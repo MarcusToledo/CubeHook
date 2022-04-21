@@ -19,11 +19,9 @@ MODULEINFO PatternScanner::getModuleInfo(const char* szModule) {
 	return modInfo;
 }
 
-DWORD PatternScanner::scanPattern(const char* szModule, const char* szPattern, const char* szMask) {
-	MODULEINFO mInfo = getModuleInfo(const_cast<char*>(szModule));
-
-	auto base = reinterpret_cast<DWORD>(mInfo.lpBaseOfDll); // get the module address
-	DWORD size = mInfo.SizeOfImage; // get the size of module
+DWORD PatternScanner::scan(const char* szPattern, const char* szMask) {
+	auto base = reinterpret_cast<DWORD>(this->modInfo.lpBaseOfDll); // get the module address
+	DWORD size = this->modInfo.SizeOfImage; // get the size of module
 	size_t patternLength = strlen(szMask); // size_t gives more optimization
 
 	for (DWORD i = 0; i < size - patternLength; i++) {
