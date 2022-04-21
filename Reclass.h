@@ -81,7 +81,7 @@ public:
 	class Entity* owner; //0x0008
 	class N000002E8* guninfo; //0x000C
 	class AmmoT* ammo; //0x0010
-	class MagAmmo_t* magAmmo; //0x0014
+	class MagAmmo_t* clipAmmo; //0x0014
 	class GunwaitT* gunwait; //0x0018
 	int32_t shots; //0x001C
 	int32_t reloading; //0x0020

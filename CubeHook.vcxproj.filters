@@ -22,6 +22,9 @@
     <Filter Include="Cheats">
       <UniqueIdentifier>{266e1d90-74ef-484b-a407-7eaeab6525bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{81c4fb0d-3b78-4ef6-9130-f792ad3495d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -41,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="Cheats.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
