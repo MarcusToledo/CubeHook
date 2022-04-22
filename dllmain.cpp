@@ -1,9 +1,11 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include <cstdio>
-#include <iostream>
-
 #include "Cheats.h"
+#include "Menu.h"
+#include <thread>
+
+static constexpr const char* OVERLAY_WINDOW_CLASS_NAME = "MyImGuiOverlayClass";
+static constexpr const char* OVERLAY_WINDOW_NAME = "MyImGuiOverlay";
+
 
 DWORD WINAPI MainThread(HMODULE hModule) {
 	//create console
@@ -15,23 +17,10 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 
 	bool bInfiniteAmmo = false;
 
-	while (true) {
-		//check key inputs
+	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);
+	Menu::handleMessages();
 
-		if (GetAsyncKeyState(VK_NUMPAD0) & 1) {
-			break;
-		}
-
-		if (GetAsyncKeyState(VK_F1) & 1) {
-			std::cout << "Ativando" << std::endl;
-			cheats->localManager.bInfiniteAmmo = true;
-			if (cheats->localManager.bInfiniteAmmo) {
-
-				cheats->infiniteAmmo();
-			}
-		}
-		Sleep(100);
-	}
+	FreeLibraryAndExitThread(hModule, 0);
 
 
 
