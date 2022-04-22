@@ -11,10 +11,10 @@ private:
 public:
 	//controllers for the cheat
 	struct Local {
-		bool bAmmo = false;
+		bool bInfiniteAmmo = false;
 	} localManager;
 	struct cCheats {
-		bool bAmmo = false;
+		bool bInfiniteAmmo = false;
 	};
 
 	//methods
