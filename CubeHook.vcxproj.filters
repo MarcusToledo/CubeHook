@@ -31,6 +31,9 @@
     <Filter Include="Menu\imgui">
       <UniqueIdentifier>{dccd9df4-c0c3-45af-a271-8dcfb7fe237d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hooks">
+      <UniqueIdentifier>{d44bb7ce-3fd8-458d-bcf2-8b436df9e89a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -84,6 +87,12 @@
     <ClInclude Include="imgui\imstb_truetype.h">
       <Filter>Menu\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hkMouseMove.h">
+      <Filter>Hooks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -124,6 +133,12 @@
     </ClCompile>
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>Menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hkMouseMove.cpp">
+      <Filter>Hooks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

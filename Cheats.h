@@ -5,8 +5,7 @@
 
 class Cheats {
 private:
-	const uintptr_t moduleBase_ = (reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)));
-	Entity* localPlayerPtr_{ *reinterpret_cast<Entity**>(moduleBase_ + Offset::LOCAL_PLAYER) };
+	Entity* localPlayerPtr_{ *reinterpret_cast<Entity**>(AddrBase::MODULE_BASE + Offset::LOCAL_PLAYER) };
 	PatternScanner* patternScanner_ = new PatternScanner("ac_client.exe"); // init pattern scanner and get modInfo
 public:
 	//controllers for the cheat

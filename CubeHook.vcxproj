@@ -166,6 +166,8 @@
     <ClInclude Include="Cheats.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Geo.h" />
+    <ClInclude Include="hkMouseMove.h" />
+    <ClInclude Include="Hook.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_impl_dx9.h" />
@@ -184,6 +186,8 @@
   <ItemGroup>
     <ClCompile Include="Cheats.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="hkMouseMove.cpp" />
+    <ClCompile Include="Hook.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />

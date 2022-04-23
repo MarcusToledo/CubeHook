@@ -1,5 +1,9 @@
 #pragma once
 
+namespace AddrBase {
+	const uintptr_t MODULE_BASE = reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr));
+	constexpr auto FUNC_MOVE_MOUSE = 0x05C690;
+}
 
 namespace Pattern {
 	constexpr auto  GOD_MODE = "\x55\x8B\xEC\x83\xE4\x00\x81\xEC\x00\x00\x00\x00\x53\x56\x8B\xF0";

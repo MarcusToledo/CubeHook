@@ -143,10 +143,10 @@ static LRESULT __stdcall wnd_proc(const HWND hwnd, const UINT u_msg, const WPARA
 
 		auto& io = ImGui::GetIO();
 
-		if (io.WantCaptureMouse && (u_msg == WM_LBUTTONDOWN && w_param == VK_LBUTTON))
-			bWasMenuClicked = true;
+		/*	if (io.WantCaptureMouse && (u_msg == WM_LBUTTONDOWN && w_param == VK_LBUTTON))*/
+		bWasMenuClicked = true;
 
-		if (!io.WantCaptureMouse)
+		if (!io.MouseDrawCursor)
 			bWasMenuClicked = false;
 
 		if (bWasMenuClicked) {

@@ -2,6 +2,8 @@
 #include "Cheats.h"
 #include "Menu.h"
 #include <thread>
+#include "hkMouseMove.h"
+
 
 static constexpr const char* OVERLAY_WINDOW_CLASS_NAME = "MyImGuiOverlayClass";
 static constexpr const char* OVERLAY_WINDOW_NAME = "MyImGuiOverlay";
@@ -16,6 +18,9 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 	Cheats* cheats = new Cheats();
 
 	bool bInfiniteAmmo = false;
+
+	Hook* hookMouseMove = new Hook(reinterpret_cast<BYTE*>(AddrBase::MODULE_BASE + AddrBase::FUNC_MOVE_MOUSE), reinterpret_cast<BYTE*>(&hkMoveMouse), reinterpret_cast<BYTE*>(&MoveMouse), 10);
+	hookMouseMove->enable();
 
 	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);
 	Menu::handleMessages();
