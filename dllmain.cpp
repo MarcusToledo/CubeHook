@@ -3,6 +3,8 @@
 #include "Menu.h"
 #include <thread>
 #include "hkMouseMove.h"
+#include "hkShowCursor.h"
+#include "Hook.h"
 
 
 static constexpr const char* OVERLAY_WINDOW_CLASS_NAME = "MyImGuiOverlayClass";
@@ -15,12 +17,29 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 	FILE* f;
 	freopen_s(&f, "CONOUT$", "w", stdout); // only output
 	std::cout << "Injected!" << std::endl;
-	Cheats* cheats = new Cheats();
+	//Cheats* cheats = new Cheats();
+
+
+	HMODULE moduleSDL = GetModuleHandleA("SDL.dll");
+
+	BYTE* pShowCursor = reinterpret_cast<BYTE*>(GetProcAddress(moduleSDL, "SDL_ShowCursor"));
+	oShowCursor = reinterpret_cast<ShowCursor_t>(trampHook32(pShowCursor, reinterpret_cast<BYTE*>(hkShowCursor), 5));
+
+
+
 
 	bool bInfiniteAmmo = false;
 
 	Hook* hookMouseMove = new Hook(reinterpret_cast<BYTE*>(AddrBase::MODULE_BASE + AddrBase::FUNC_MOVE_MOUSE), reinterpret_cast<BYTE*>(&hkMoveMouse), reinterpret_cast<BYTE*>(&MoveMouse), 10);
 	hookMouseMove->enable();
+
+
+
+
+
+
+
+	/*Hook* hookShowCursor = new Hook("SDL_ShowCursor", "SDL.dll", )*/
 
 	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);
 	Menu::handleMessages();

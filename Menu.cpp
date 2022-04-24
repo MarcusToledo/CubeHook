@@ -137,17 +137,19 @@ static LRESULT __stdcall wnd_proc(const HWND hwnd, const UINT u_msg, const WPARA
 		GMenu.setMenuOpenedBool(!openedFlag);
 	}
 
+
 	if (GMenu.IsMenuOpened()) {
 		//I wanted to have menu active and only accept inputs once I pressed left click on it
 		//this way I can see my menu while still passing inputs to the game until I press on my menu
-
+		ImGui_ImplWin32_WndProcHandler(hwnd, u_msg, w_param, l_param);
 		auto& io = ImGui::GetIO();
 
-		/*	if (io.WantCaptureMouse && (u_msg == WM_LBUTTONDOWN && w_param == VK_LBUTTON))*/
-		bWasMenuClicked = true;
+		if (io.WantCaptureMouse && (u_msg == WM_LBUTTONDOWN && w_param == VK_LBUTTON))
+			bWasMenuClicked = true;
 
 		if (!io.MouseDrawCursor)
 			bWasMenuClicked = false;
+
 
 		if (bWasMenuClicked) {
 			if (u_msg == WM_KEYDOWN && bWasKeyPressed) {
@@ -162,6 +164,7 @@ static LRESULT __stdcall wnd_proc(const HWND hwnd, const UINT u_msg, const WPARA
 	}
 
 	bWasKeyPressed = true;
+	SDL_ShowCursor(-1);
 
 	return CallWindowProcA(reinterpret_cast<WNDPROC>(GMenu.getGameWindowProc()), hwnd, u_msg, w_param, l_param);
 }
@@ -250,7 +253,7 @@ void Menu::renderDirectXFrame() noexcept {
 		}
 
 		device->BeginScene();
-
+		device->ShowCursor(true);
 		ImGui_ImplDX9_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 
@@ -269,7 +272,7 @@ void Menu::renderDirectXFrame() noexcept {
 
 		device->EndScene();
 	}
-
+	device->ShowCursor(false);
 	device->Present(0, 0, 0, 0);
 	device->Clear(0, 0, D3DCLEAR_TARGET, 0, 1.0f, 0);
 }

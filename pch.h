@@ -8,6 +8,7 @@
 #define PCH_H
 #define WIN32_LEAN_AND_MEANS
 
+
 #include <cstdio>
 #include <iostream>
 
@@ -15,6 +16,9 @@
 #include <d3dx9.h>
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
+
+#include <SDL.h>
+#pragma comment(lib, "lib/SDL.lib")
 
 //ImGui files
 #include "imgui/imgui.h"

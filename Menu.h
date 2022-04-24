@@ -44,7 +44,7 @@ private:
 	DWORD m_GameProcessId;
 	HMODULE m_HInstance;
 	LPDIRECT3DDEVICE9EX m_D3D9Device;
-	bool m_MenuOpened = false;
+	bool m_MenuOpened = true;
 };
 
 extern Menu GMenu;

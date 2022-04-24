@@ -34,6 +34,9 @@
     <Filter Include="Hooks">
       <UniqueIdentifier>{d44bb7ce-3fd8-458d-bcf2-8b436df9e89a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Includes">
+      <UniqueIdentifier>{361161ef-0b2c-46c5-a4dc-3f902743c49a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -93,6 +96,12 @@
     <ClInclude Include="hkMouseMove.h">
       <Filter>Hooks</Filter>
     </ClInclude>
+    <ClInclude Include="hkShowCursor.h">
+      <Filter>Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\assaultcube\sdk.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -138,6 +147,9 @@
       <Filter>Hooks</Filter>
     </ClCompile>
     <ClCompile Include="hkMouseMove.cpp">
+      <Filter>Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hkShowCursor.cpp">
       <Filter>Hooks</Filter>
     </ClCompile>
   </ItemGroup>
