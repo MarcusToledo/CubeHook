@@ -17,11 +17,10 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 	FILE* f;
 	freopen_s(&f, "CONOUT$", "w", stdout); // only output
 	std::cout << "Injected!" << std::endl;
-	//Cheats* cheats = new Cheats();
+	Cheats* cheats = new Cheats();
 
 
 	HMODULE moduleSDL = GetModuleHandleA("SDL.dll");
-
 	BYTE* pShowCursor = reinterpret_cast<BYTE*>(GetProcAddress(moduleSDL, "SDL_ShowCursor"));
 	oShowCursor = reinterpret_cast<ShowCursor_t>(trampHook32(pShowCursor, reinterpret_cast<BYTE*>(hkShowCursor), 5));
 
@@ -42,7 +41,12 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 	/*Hook* hookShowCursor = new Hook("SDL_ShowCursor", "SDL.dll", )*/
 
 	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);
-	Menu::handleMessages();
+
+	while (true) {
+		GMenu.initCheats();
+		Menu::handleMessages();
+	}
+
 
 	FreeLibraryAndExitThread(hModule, 0);
 

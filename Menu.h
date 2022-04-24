@@ -1,7 +1,14 @@
 #pragma once
+#include "Cheats.h"
+
 
 //get game window_class_name with tools such as AutoIt3Info.exe
 static constexpr const char* GAME_WINDOW_CLASS_NAME = "SDL_app";
+
+constexpr auto IMGUI_WIDTH = 145;
+constexpr auto IMGUI_HEIGHT = 165;
+
+
 
 struct WindowRect {
 	int32_t m_WindowXPos, m_WindowYPos, m_WindowWidth, m_WindowHeight;
@@ -15,6 +22,8 @@ struct WindowRect {
 };
 
 class Menu {
+private:
+	Cheats* cheats = new Cheats();
 public:
 	Menu() = default;
 	~Menu() = default;
@@ -32,6 +41,9 @@ public:
 	bool IsMenuOpened()									const noexcept { return this->m_MenuOpened; }
 
 	void setMenuOpenedBool(bool opened)					noexcept { this->m_MenuOpened = opened; }
+
+	void initCheats();
+
 private:
 	void renderImGuiWindow()	noexcept;
 private:
@@ -45,6 +57,7 @@ private:
 	HMODULE m_HInstance;
 	LPDIRECT3DDEVICE9EX m_D3D9Device;
 	bool m_MenuOpened = true;
+
 };
 
 extern Menu GMenu;

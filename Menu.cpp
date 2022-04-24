@@ -278,9 +278,14 @@ void Menu::renderDirectXFrame() noexcept {
 }
 
 void Menu::renderImGuiWindow() noexcept {
-	if (ImGui::Begin("GH Internal ImGui Overlay", &this->m_MenuOpened)) {
-		ImGui::Text("Some bullshit text");
+	ImGui::SetNextWindowSize(ImVec2(IMGUI_WIDTH, IMGUI_HEIGHT), 0);
+	if (ImGui::Begin("CubeHook v1.0", &this->m_MenuOpened, ImGuiWindowFlags_NoResize)) {
+		ImGui::Checkbox("Infinity Ammo", &cheats->cheatManager->bInfiniteAmmo);
 
 		ImGui::End();
 	}
+}
+
+void Menu::initCheats() {
+	cheats->infiniteAmmo();
 }
