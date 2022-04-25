@@ -23,6 +23,7 @@ static LRESULT CALLBACK MainTimerLoop(HWND hwnd, UINT uMsg, int32_t timerId, DWO
 	GMenu.renderDirectXFrame();
 
 	//after this run all of your features such as aimbot, esp, etc..
+	GMenu.initCheats();
 
 	return TRUE;
 }

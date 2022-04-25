@@ -47,25 +47,13 @@ mGatewayPtr_(gatewayPtr), mLen_(len) {
 	this->mOriginalBytes_ = new BYTE[len];
 }
 
-bool Hook::detour32() { //place jmp
-	if (mLen_ < 5)
-		return false;
-	DWORD oldProtect;
-	VirtualProtect(mSrc_, mLen_, PAGE_EXECUTE_READWRITE, &oldProtect);
-	memset(mSrc_, 0x90, mLen_);
-	uintptr_t relativeAddr = mDst_ - (mSrc_ + 5);
-	*mSrc_ = 0xE9;
-	*reinterpret_cast<uintptr_t*>(mSrc_ + 1) = relativeAddr;
-	VirtualProtect(mSrc_, mLen_, oldProtect, &oldProtect);
-	return true;
-}
 
 bool Hook::getStatus() {
 	return this->m_bStatus_;
 }
 void Hook::enable() {
 	memcpy_s(mOriginalBytes_, mLen_, mSrc_, mLen_);
-	*reinterpret_cast<uintptr_t*>(mGatewayPtr_) = reinterpret_cast<uintptr_t>(trampHook32(mSrc_, mDst_, mLen_));
+	*reinterpret_cast<uintptr_t*>(mGatewayPtr_) = reinterpret_cast<uintptr_t>(trampHook32(mSrc_, mDst_, mLen_)); //! look this 
 	m_bStatus_ = true;
 }
 

@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "pch.h"
-#define PI 3.14159265358979323846 
+
 
 
 void patch(BYTE* dst, BYTE* src, unsigned int size);
@@ -17,7 +17,6 @@ private:
 	SIZE_T mLen_{ 0 };
 	BYTE* mOriginalBytes_{ nullptr };
 public:
-	bool detour32();
 	bool getStatus();
 	void enable();
 	void disable();

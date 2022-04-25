@@ -8,7 +8,7 @@ int SDLCALL hkShowCursor(int toggle) {
 		SDL_WM_GrabInput(SDL_GRAB_OFF);
 		oShowCursor(SDL_ENABLE);
 		bEnabled = true;
-	
+
 
 	}
 
