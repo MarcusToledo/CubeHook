@@ -2,11 +2,11 @@
 #include "pch.h"
 
 #include "Hook.h"
-#include "Memory.h"
+#include "Memory/Memory.h"
 
-typedef void* (__cdecl* tMoveMouse)(int idx, int idy);
+typedef void* (__cdecl* t_MoveMouse)(int idx, int idy);
 
-inline tMoveMouse MoveMouse = reinterpret_cast<tMoveMouse>(AddrBase::MODULE_BASE + AddrBase::FUNC_MOVE_MOUSE);
+inline t_MoveMouse MoveMouse = reinterpret_cast<t_MoveMouse>(AddrBase::MODULE_BASE + AddrBase::FUNC_MOVE_MOUSE);
 
 void* __cdecl hkMoveMouse(int idx, int idy);
 

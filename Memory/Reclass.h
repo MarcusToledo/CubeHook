@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <cstdint>
 
-#include "Geo.h"
+#include "Geo/Geo.h"
 
 using Vec3 = Vector3;
 

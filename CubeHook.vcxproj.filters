@@ -45,22 +45,22 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Reclass.h">
+    <ClInclude Include="Memory\Reclass.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Geo.h">
+    <ClInclude Include="Geo\Geo.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="PatternScanner.h">
+    <ClInclude Include="Memory\PatternScanner.h">
       <Filter>Memory\PatternScanner</Filter>
     </ClInclude>
-    <ClInclude Include="Memory.h">
+    <ClInclude Include="Memory\Memory.h">
       <Filter>Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Cheats.h">
+    <ClInclude Include="Cheats\Cheats.h">
       <Filter>Cheats</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="Menu\Menu.h">
       <Filter>Menu</Filter>
     </ClInclude>
     <ClInclude Include="imgui\imgui.h">
@@ -90,17 +90,20 @@
     <ClInclude Include="imgui\imstb_truetype.h">
       <Filter>Menu\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Hook.h">
+    <ClInclude Include="Hooks\Hook.h">
       <Filter>Hooks</Filter>
     </ClInclude>
-    <ClInclude Include="hkMouseMove.h">
+    <ClInclude Include="Hooks\hkMouseMove.h">
       <Filter>Hooks</Filter>
     </ClInclude>
-    <ClInclude Include="hkShowCursor.h">
+    <ClInclude Include="Hooks\hkShowCursor.h">
       <Filter>Hooks</Filter>
     </ClInclude>
     <ClInclude Include="Includes\assaultcube\sdk.h">
       <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks\hkSwapBuffers.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,13 +113,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PatternScanner.cpp">
+    <ClCompile Include="Memory\PatternScanner.cpp">
       <Filter>Memory\PatternScanner</Filter>
     </ClCompile>
-    <ClCompile Include="Cheats.cpp">
+    <ClCompile Include="Cheats\Cheats.cpp">
       <Filter>Cheats</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="Menu\Menu.cpp">
       <Filter>Menu</Filter>
     </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
@@ -143,14 +146,17 @@
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>Menu\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Hook.cpp">
+    <ClCompile Include="Hooks\Hook.cpp">
       <Filter>Hooks</Filter>
     </ClCompile>
-    <ClCompile Include="hkMouseMove.cpp">
+    <ClCompile Include="Hooks\hkMouseMove.cpp">
       <Filter>Hooks</Filter>
     </ClCompile>
-    <ClCompile Include="hkShowCursor.cpp">
+    <ClCompile Include="Hooks\hkShowCursor.cpp">
       <Filter>Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\hkSwapBuffers.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

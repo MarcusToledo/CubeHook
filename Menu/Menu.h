@@ -1,5 +1,5 @@
 #pragma once
-#include "Cheats.h"
+#include "Cheats/Cheats.h"
 
 
 //get game window_class_name with tools such as AutoIt3Info.exe

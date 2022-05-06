@@ -1,7 +1,7 @@
 #pragma once
-#include "PatternScanner.h"
-#include "Reclass.h"
-#include "Memory.h"
+#include "Memory/Memory.h"
+#include "Memory/PatternScanner.h"
+#include "Memory/Reclass.h"
 
 class Cheats {
 private:

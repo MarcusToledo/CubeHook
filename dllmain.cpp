@@ -1,13 +1,24 @@
 #include "pch.h"
-#include "Cheats.h"
-#include "Menu.h"
 #include <thread>
-#include "hkMouseMove.h"
-#include "Hook.h"
+#include "Hooks/hkMouseMove.h"
+#include "Hooks/hkSwapBuffers.h"
+#include "Hooks/Hook.h"
+#include "Menu/Menu.h"
 
 
 static constexpr const char* OVERLAY_WINDOW_CLASS_NAME = "MyImGuiOverlayClass";
 static constexpr const char* OVERLAY_WINDOW_NAME = "MyImGuiOverlay";
+
+
+
+BOOL __stdcall hkSwapBuffers(HDC hDc) {
+
+
+
+	return o_wglSwapBuffers(hDc); // returns to original function
+}
+
+
 
 
 DWORD WINAPI MainThread(HMODULE hModule) {
@@ -23,11 +34,15 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 	//Init hooks
 	hookMouseMove->enable();
 
+	//TODO: Add swapbuffers hook
+
+
 	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);
 	Menu::handleMessages();
 
 	FreeLibraryAndExitThread(hModule, 0);
 	return 0;
+
 }
 
 

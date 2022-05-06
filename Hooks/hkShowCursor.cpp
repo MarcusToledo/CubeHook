@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
-#include <hkShowCursor.h>
+#include "hkShowCursor.h"
+#include "Menu/Menu.h"
 
 static bool bEnabled = false;
 

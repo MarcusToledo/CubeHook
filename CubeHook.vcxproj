@@ -163,12 +163,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Cheats.h" />
+    <ClInclude Include="Cheats\Cheats.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Geo.h" />
-    <ClInclude Include="hkMouseMove.h" />
-    <ClInclude Include="hkShowCursor.h" />
-    <ClInclude Include="Hook.h" />
+    <ClInclude Include="Geo\Geo.h" />
+    <ClInclude Include="Hooks\hkMouseMove.h" />
+    <ClInclude Include="Hooks\hkShowCursor.h" />
+    <ClInclude Include="Hooks\hkSwapBuffers.h" />
+    <ClInclude Include="Hooks\Hook.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_impl_dx9.h" />
@@ -179,18 +180,19 @@
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="Includes\assaultcube\sdk.h" />
-    <ClInclude Include="Memory.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="PatternScanner.h" />
+    <ClInclude Include="Memory\Memory.h" />
+    <ClInclude Include="Menu\Menu.h" />
+    <ClInclude Include="Memory\PatternScanner.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Reclass.h" />
+    <ClInclude Include="Memory\Reclass.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cheats.cpp" />
+    <ClCompile Include="Cheats\Cheats.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="hkMouseMove.cpp" />
-    <ClCompile Include="hkShowCursor.cpp" />
-    <ClCompile Include="Hook.cpp" />
+    <ClCompile Include="Hooks\hkMouseMove.cpp" />
+    <ClCompile Include="Hooks\hkShowCursor.cpp" />
+    <ClCompile Include="Hooks\hkSwapBuffers.cpp" />
+    <ClCompile Include="Hooks\Hook.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
@@ -199,8 +201,8 @@
     <ClCompile Include="imgui\imgui_stdlib.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="PatternScanner.cpp" />
+    <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="Memory\PatternScanner.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

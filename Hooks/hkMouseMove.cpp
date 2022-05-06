@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include "hkMouseMove.h"
-#include "Menu.h"
+#include "Menu/Menu.h"
 
 
 void* __cdecl hkMoveMouse(int idx, int idy) {
