@@ -9,8 +9,8 @@ Infinite Ammo
 ## Todo
 
 ### Code
-Implement exception control (Try catch)
-Debug mode
+Implement exception control (Try catch)  
+Debug mode  
 
 ### Features
 
