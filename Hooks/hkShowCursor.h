@@ -5,7 +5,9 @@
 #include "Hook.h"
 
 
-typedef int(SDLCALL* t_showCursor)(int toggle);
+typedef int(SDLCALL* t_showCursor)(int toggle); //TODO: Change this to a using
+//using t_showCursor = int(SDLCALL*)(int toggle);
+
 
 int SDLCALL hkShowCursor(int toggle);
 

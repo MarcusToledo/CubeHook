@@ -4,7 +4,7 @@
 #include "Hook.h"
 #include "Memory/Memory.h"
 
-typedef void* (__cdecl* t_MoveMouse)(int idx, int idy);
+typedef void* (__cdecl* t_MoveMouse)(int idx, int idy); //TODO: Change this to a using
 
 inline t_MoveMouse MoveMouse = reinterpret_cast<t_MoveMouse>(AddrBase::MODULE_BASE + AddrBase::FUNC_MOVE_MOUSE);
 

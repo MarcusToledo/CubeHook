@@ -8,6 +8,10 @@ namespace AddrBase {
 namespace Pattern {
 	constexpr auto  GOD_MODE = "\x55\x8B\xEC\x83\xE4\x00\x81\xEC\x00\x00\x00\x00\x53\x56\x8B\xF0";
 	constexpr auto GOD_MODE_MASK = "xxxxx?xx????xxxx";
+
+	constexpr auto INFINITY_AMMO = "\xFF\x0E\x57\x8B\x7C\x00\x00\x8D\x74\x00\x00\xE8\x00\x00\x00\x00\x5F\x5E\xB0\x00\x5B\x8B\xE5\x5D\xC2\x00\x00\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\x55";
+	constexpr auto INFINITY_AMMO_MASK = "xxxxx??xx??x????xxx?xxxxx??xxxxxxxxxxxxx";
+	constexpr auto INFINITY_AMMO_LEN = 0x2; //Size used to write opcodes
 }
 
 namespace Offset {

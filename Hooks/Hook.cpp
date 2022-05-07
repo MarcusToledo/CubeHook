@@ -34,6 +34,14 @@ BYTE* trampHook32(BYTE* src, BYTE* dst, const uintptr_t len) {
 	return gateway;
 }
 
+void nop(BYTE* dst, SIZE_T len) {
+	DWORD oldProtect; // armazenar permissões de escrita da pagina
+	VirtualProtect(dst, len, PAGE_EXECUTE_READWRITE, &oldProtect); // Altera permissão de escrita e armazena a antiga em oldProtect
+	memset(dst, 0x90, len); // Seta nops na memoria
+	VirtualProtect(dst, len, oldProtect, &oldProtect); // Retorna as permissões de escrita inicial
+}
+
+
 Hook::Hook(BYTE* src, BYTE* dst, BYTE* gatewayPtr, SIZE_T len) : mSrc_(src), mDst_(dst), mGatewayPtr_(gatewayPtr),
 mLen_(len), mOriginalBytes_(new BYTE[len]) {
 }
@@ -46,6 +54,7 @@ mGatewayPtr_(gatewayPtr), mLen_(len) {
 		mSrc_ = reinterpret_cast<BYTE*>(GetProcAddress(hModule, exportName));
 	this->mOriginalBytes_ = new BYTE[len];
 }
+
 
 
 bool Hook::getStatus() {

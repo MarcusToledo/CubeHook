@@ -25,6 +25,7 @@ static LRESULT CALLBACK MainTimerLoop(HWND hwnd, UINT uMsg, int32_t timerId, DWO
 	//after this run all of your features such as aimbot, esp, etc..
 	GMenu.initCheats();
 
+
 	return TRUE;
 }
 
@@ -288,5 +289,6 @@ void Menu::renderImGuiWindow() noexcept {
 }
 
 void Menu::initCheats() {
+
 	cheats->infiniteAmmo();
 }

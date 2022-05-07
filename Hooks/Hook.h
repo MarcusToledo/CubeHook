@@ -6,6 +6,7 @@
 void patch(BYTE* dst, BYTE* src, unsigned int size);
 bool detour32(BYTE* src, BYTE* dst, const uintptr_t len);
 BYTE* trampHook32(BYTE* src, BYTE* dst, const uintptr_t len);
+void nop(BYTE* dst, SIZE_T len);
 
 
 class Hook {

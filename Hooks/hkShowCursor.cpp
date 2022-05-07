@@ -4,6 +4,7 @@
 
 static bool bEnabled = false;
 
+
 int SDLCALL hkShowCursor(int toggle) {
 	if (GMenu.IsMenuOpened()) {
 		SDL_WM_GrabInput(SDL_GRAB_OFF);
