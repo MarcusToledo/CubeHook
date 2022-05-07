@@ -4,17 +4,20 @@ Projeto feito para consolidar meus conhecimentos em C++, POO, engenharia reversa
 
 # Features
 
-Infinity Ammo
+Infinite Ammo
 
 ## Todo
 
 ### Code
 Implement exception control (Try catch)
-
+Debug mode
 
 ### Features
 
 GodMode  
+Rapidfire  
+Speed Hack  
+NoRecoil  
 ESP (OpenGL hooks)  
 Aimbot (Calc angles, Calc other players pos)  
 
