@@ -23,6 +23,8 @@ void Cheats::infiniteAmmo() {
 		localManager.bInfiniteAmmo = true; // seta como ativado no controlador local
 	}
 	if (!cheatManager->bInfiniteAmmo && localManager.bInfiniteAmmo) {
+		patch(reinterpret_cast<BYTE*>(ammoAddr_), fixByteAmmo_, Pattern::INFINITY_AMMO_LEN); // Retorna os bytes originais
+		this->localPlayerPtr_->currentWeapon->clipAmmo->ammo = 30; // Seta munição para 30 novamente TODO: Validar munição padrão da arma atual (30 é o padrão para ar)
 		localManager.bInfiniteAmmo = false;
 	}
 
