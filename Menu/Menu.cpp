@@ -283,6 +283,7 @@ void Menu::renderImGuiWindow() noexcept {
 	ImGui::SetNextWindowSize(ImVec2(IMGUI_WIDTH, IMGUI_HEIGHT), 0);
 	if (ImGui::Begin("CubeHook v1.0", &this->m_MenuOpened, ImGuiWindowFlags_NoResize)) {
 		ImGui::Checkbox("Infinity Ammo", &cheats->cheatManager->bInfiniteAmmo);
+		ImGui::Checkbox("NoRecoil ", &cheats->cheatManager->bNoRecoil);
 
 		ImGui::End();
 	}
@@ -291,4 +292,5 @@ void Menu::renderImGuiWindow() noexcept {
 void Menu::initCheats() {
 
 	cheats->infiniteAmmo();
+	cheats->noRecoil();
 }
