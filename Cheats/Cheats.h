@@ -11,13 +11,18 @@ private:
 
 	DWORD ammoAddr_ = NULL; // ptr to ammo
 	BYTE* fixByteAmmo_ = nullptr; // Original instructions for ammo function
+
+	DWORD noRecoilAddr_ = NULL; // ptr to no recoil
+	BYTE* fixByteNoRecoil_ = nullptr; // Original instructions for no recoil function
 public:
 	//controllers for the cheat
 	struct Local {
 		bool bInfiniteAmmo = false;
+		bool bNoRecoil = false;
 	} localManager;
 	struct cCheats {
 		bool bInfiniteAmmo = false;
+		bool bNoRecoil = false;
 	};
 
 	//methods
@@ -26,6 +31,7 @@ public:
 	~Cheats(); // destructor
 
 	void infiniteAmmo(); //TODO: Transform these methods into classes?
+	void noRecoil();
 	//TODO: Add more features
 
 

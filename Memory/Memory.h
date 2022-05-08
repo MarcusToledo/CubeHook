@@ -11,7 +11,11 @@ namespace Pattern {
 
 	constexpr auto INFINITY_AMMO = "\xFF\x0E\x57\x8B\x7C\x00\x00\x8D\x74\x00\x00\xE8\x00\x00\x00\x00\x5F\x5E\xB0\x00\x5B\x8B\xE5\x5D\xC2\x00\x00\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\x55";
 	constexpr auto INFINITY_AMMO_MASK = "xxxxx??xx??x????xxx?xxxxx??xxxxxxxxxxxxx";
-	constexpr auto INFINITY_AMMO_LEN = 0x2; //Size used to write opcodes
+	constexpr auto INFINITY_AMMO_LEN = 2; //Size used to write opcodes
+
+	constexpr auto NO_RECOIL = "\x50\x8D\x4C\x00\x00\x51\x8B\xCE\xFF\xD2\x8B\x46\x00\x3B\x05";
+	constexpr auto NO_RECOIL_MASK = "xxx??xxxxxxx?xx";
+	constexpr auto NO_RECOIL_LEN = 10; //Size used to write opcodes
 }
 
 namespace Offset {

@@ -4,8 +4,16 @@
 
 
 
-Cheats::Cheats() : ammoAddr_(patternScanner_->scan(Pattern::INFINITY_AMMO, Pattern::INFINITY_AMMO_MASK)) {
-	//TODO: Constructor?
+Cheats::Cheats() { //TODO Add try and catch to catch if pattern is not found
+	try {
+		ammoAddr_ = patternScanner_->scan(Pattern::INFINITY_AMMO, Pattern::INFINITY_AMMO_MASK);
+		noRecoilAddr_ = patternScanner_->scan(Pattern::NO_RECOIL, Pattern::NO_RECOIL_MASK);
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+		std::cout << "Error: Pattern not found" << std::endl;
+
+	}
 }
 
 Cheats::~Cheats() {
@@ -28,4 +36,17 @@ void Cheats::infiniteAmmo() {
 		localManager.bInfiniteAmmo = false;
 	}
 
+}
+
+void Cheats::noRecoil() {
+	if (cheatManager->bNoRecoil && !localManager.bNoRecoil) {
+		fixByteNoRecoil_ = new BYTE[Pattern::NO_RECOIL_LEN];
+		memcpy(fixByteNoRecoil_, reinterpret_cast<BYTE*>(noRecoilAddr_), Pattern::NO_RECOIL_LEN); // copia bytes originais para fixByteNoRecoil_
+		nop(reinterpret_cast<BYTE*>(noRecoilAddr_), Pattern::NO_RECOIL_LEN); // seta nop para os byes de noRecoil
+		localManager.bNoRecoil = true;
+	}
+	if (!cheatManager->bNoRecoil && localManager.bNoRecoil) {
+		patch(reinterpret_cast<BYTE*>(noRecoilAddr_), fixByteNoRecoil_, Pattern::NO_RECOIL_LEN); // Retorna os bytes originais
+		localManager.bNoRecoil = false;
+	}
 }
