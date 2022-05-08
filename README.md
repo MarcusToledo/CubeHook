@@ -4,20 +4,21 @@ Projeto feito para consolidar meus conhecimentos em C++, POO, engenharia reversa
 
 # Features
 
-Infinite Ammo
+Infinite Ammo  
+NoRecoil  
 
 ## Todo
 
 ### Code
+Hook Swapbuffers (!)  
 Implement exception control (Try catch)  
-Debug mode  
+Debug mode (Classe de depuração)  
 
 ### Features
 
 GodMode  
 Rapidfire  
-Speed Hack  
-NoRecoil  
+Speed Hack    
 ESP (OpenGL hooks)  
 Aimbot (Calc angles, Calc other players pos)  
 
