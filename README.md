@@ -12,7 +12,7 @@ NoRecoil
 ### Code
 Hook Swapbuffers (!)  
 Implement exception control (Try catch)  
-Debug mode  
+Debug mode (Classe de depuração)  
 
 ### Features
 
