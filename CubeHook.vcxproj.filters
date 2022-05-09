@@ -103,7 +103,7 @@
       <Filter>Includes</Filter>
     </ClInclude>
     <ClInclude Include="Hooks\hkSwapBuffers.h">
-      <Filter>Header Files</Filter>
+      <Filter>Hooks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +156,7 @@
       <Filter>Hooks</Filter>
     </ClCompile>
     <ClCompile Include="Hooks\hkSwapBuffers.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Hooks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

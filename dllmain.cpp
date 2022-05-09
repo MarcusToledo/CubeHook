@@ -5,20 +5,19 @@
 #include "Hooks/Hook.h"
 #include "Menu/Menu.h"
 
-
 static constexpr const char* OVERLAY_WINDOW_CLASS_NAME = "MyImGuiOverlayClass";
 static constexpr const char* OVERLAY_WINDOW_NAME = "MyImGuiOverlay"; //TODO: Change this to appropriate file
 
 
 
+
 BOOL __stdcall hkSwapBuffers(HDC hDc) {
 
+	std::cout << "Hooked!!!" << std::endl;
 
-
-	return o_wglSwapBuffers(hDc); // returns to original function
+	return o_wglSwapBuffers(hDc); // return to original function
 }
 
-//TODO: Add swapbuffers hook
 
 
 
@@ -36,7 +35,7 @@ DWORD WINAPI MainThread(HMODULE hModule) {
 
 	//Init hooks
 	hookMouseMove->enable();
-
+	hookWglSwapBuffer->toggle();
 
 
 	GMenu.initilizeWindow(hModule, OVERLAY_WINDOW_CLASS_NAME, OVERLAY_WINDOW_NAME);

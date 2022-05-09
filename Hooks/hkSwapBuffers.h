@@ -1,10 +1,15 @@
 #pragma once
 #include "pch.h"
+#include "Hooks/Hook.h"
 
-typedef BOOL(__stdcall* t_wglSwapBuffers)(HDC hdc);
+using t_wglSwapBuffers = BOOL(__stdcall*)(HDC hdc);
+inline t_wglSwapBuffers o_wglSwapBuffers;
 
-inline t_wglSwapBuffers o_wglSwapBuffers = reinterpret_cast<t_wglSwapBuffers>(GetProcAddress(GetModuleHandle("opengl32.dll"), "wglSwapBuffers")); // Pointer to original swapbuffers function
+// 	TrampolineHook* myHook = new TrampolineHook("wglSwapBuffers", "opengl32.dll", (BYTE*)hkSwapBuffers, (BYTE*)&wglSwapBuffers, 5);
+
 
 BOOL __stdcall hkSwapBuffers(HDC hDc);
+
+inline Hook* hookWglSwapBuffer = new Hook("wglSwapBuffers", "opengl32.dll", reinterpret_cast<BYTE*>(hkSwapBuffers), reinterpret_cast<BYTE*>(&o_wglSwapBuffers), 5); // Init tramp hook
 
 
