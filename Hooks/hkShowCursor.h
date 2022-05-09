@@ -11,7 +11,7 @@ typedef int(SDLCALL* t_showCursor)(int toggle); //TODO: Change this to a using
 
 int SDLCALL hkShowCursor(int toggle);
 
-inline HMODULE moduleSDL = GetModuleHandleA("SDL.dll");
-inline BYTE* pShowCursor = reinterpret_cast<BYTE*>(GetProcAddress(moduleSDL, "SDL_ShowCursor"));
+inline HMODULE moduleSDL{ GetModuleHandleA("SDL.dll") };
+inline BYTE* pShowCursor{ reinterpret_cast<BYTE*>(GetProcAddress(moduleSDL, "SDL_ShowCursor")) };
 
-inline t_showCursor oShowCursor = reinterpret_cast<t_showCursor>(trampHook32(pShowCursor, reinterpret_cast<BYTE*>(hkShowCursor), 5));
+inline t_showCursor oShowCursor{ reinterpret_cast<t_showCursor>(trampHook32(pShowCursor, reinterpret_cast<BYTE*>(hkShowCursor), 5)) };

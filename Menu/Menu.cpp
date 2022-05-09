@@ -29,6 +29,7 @@ static LRESULT CALLBACK MainTimerLoop(HWND hwnd, UINT uMsg, int32_t timerId, DWO
 	return TRUE;
 }
 
+
 void Menu::handleMessages() noexcept {
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
